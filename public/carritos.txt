@@ -1,0 +1,31 @@
+[
+  {
+    "timestamp": "Sat Oct 15 2022 18:12:03 GMT-0300 (hora estándar de Argentina)",
+    "products": {},
+    "id": 1
+  },
+  {
+    "timestamp": "Sat Oct 15 2022 18:31:37 GMT-0300 (hora estándar de Argentina)",
+    "products": {
+      "name": "Werewolf",
+      "price": 700,
+      "image": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Werewolf-512.png",
+      "description": "Libro tapa dura, encuadernación color gris",
+      "id": 1,
+      "code": 34,
+      "stock": 1,
+      "timestamp": "15/10/2022, 17:01:08"
+    },
+    "id": 2
+  },
+  {
+    "timestamp": "Sat Oct 15 2022 18:36:33 GMT-0300 (hora estándar de Argentina)",
+    "products": {},
+    "id": 3
+  },
+  {
+    "timestamp": "Sat Oct 15 2022 18:36:33 GMT-0300 (hora estándar de Argentina)",
+    "products": {},
+    "id": 4
+  }
+]

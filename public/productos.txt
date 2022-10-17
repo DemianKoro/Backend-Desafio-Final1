@@ -1,32 +1,72 @@
 [
   {
-    "name": "Drácula",
-    "price": 700.7,
-    "thumbnail": "https://dracula.com",
-    "id": 1
+    "name": "Werewolf",
+    "price": 700,
+    "image": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Werewolf-512.png",
+    "description": "Libro tapa dura, encuadernación color gris",
+    "id": 1,
+    "code": 34,
+    "stock": 1,
+    "timestamp": "15/10/2022, 17:01:08"
   },
   {
-    "name": "Frankestein",
-    "price": 915.65,
-    "thumbnail": "https://frankestein.com",
-    "id": 2
+    "name": "Witches",
+    "price": 915,
+    "image": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Sorceress-512.png",
+    "description": "Libro tapa dura, encuadernación color negro",
+    "id": 2,
+    "code": 35,
+    "stock": 14,
+    "timestamp": "15/10/2022, 17:01:44"
   },
   {
     "name": "Farenheit 451",
     "price": 645,
-    "thumbnail": "https://farenheit451.com",
-    "id": 3
+    "image": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Destructive_Magic-512.png",
+    "description": "Libro tapa dura, encuadernación color rojo",
+    "id": 3,
+    "code": 36,
+    "stock": 26,
+    "timestamp": "15/10/2022, 17:02:10"
   },
   {
-    "name": "Wild Card",
-    "price": 1000,
-    "thumbnail": "https://wildcar.com",
-    "id": 4
+    "name": "Wild Cards",
+    "price": 979,
+    "image": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Fairy-512.png",
+    "description": "Libro tapa blanda, encuadernación color blanco",
+    "id": 4,
+    "code": 37,
+    "stock": 4,
+    "timestamp": "15/10/2022, 17:02:14"
   },
   {
-    "name": "Demian",
+    "name": "Centauro",
     "price": 600,
-    "thumbnail": "https://demian.com",
-    "id": 5
+    "image": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Centaur-512.png",
+    "description": "Libro tapa blanda, Foto en la portada",
+    "id": 5,
+    "code": 38,
+    "stock": 10,
+    "timestamp": "15/10/2022, 17:02:38"
+  },
+  {
+    "name": "Drácula",
+    "price": 1900,
+    "image": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Centaur-512.png",
+    "description": "Libro tapa blanda, Foto en la portada",
+    "code": "40",
+    "stock": 20,
+    "timestamp": "Sun Oct 16 2022 00:54:44 GMT-0300 (hora estándar de Argentina)",
+    "id": 6
+  },
+  {
+    "name": "Werewolf",
+    "price": 700,
+    "image": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Werewolf-512.png",
+    "description": "Libro tapa dura, encuadernación color gris",
+    "id": 7,
+    "code": 34,
+    "stock": 1,
+    "timestamp": "15/10/2022, 17:01:08"
   }
 ]

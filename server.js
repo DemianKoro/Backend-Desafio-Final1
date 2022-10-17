@@ -1,10 +1,14 @@
 const express = require('express');
 const app = express();
 const routerProductos = require('./src/rutas/productos')
+const routerCarritos = require('./src/rutas/carritos');
 
 // const { Router } = require('express');
 // const routerProductos = Router()
-const productos = require('./public/productos.txt')
+const productos = require('./public/productos.txt');
+const carritos = require('./public/carritos.txt')
+
+
 
 
 
@@ -17,7 +21,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 
 app.use('/api/productos', routerProductos)
-
+app.use('/api/carritos', routerCarritos)
 
 
 

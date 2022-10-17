@@ -1,32 +1,32 @@
 [
   {
-    "name": "Drácula",
-    "price": 700.7,
-    "thumbnail": "https://dracula.com",
+    "name": "Werewolf",
+    "price": 700,
+    "image": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Werewolf-512.png",
     "id": 1
   },
   {
-    "name": "Frankestein",
-    "price": 915.65,
-    "thumbnail": "https://frankestein.com",
+    "name": "Witches",
+    "price": 915,
+    "image": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Sorceress-512.png",
     "id": 2
   },
   {
     "name": "Farenheit 451",
     "price": 645,
-    "thumbnail": "https://farenheit451.com",
+    "image": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Destructive_Magic-512.png",
     "id": 3
   },
   {
-    "name": "Wild Card",
-    "price": 1000,
-    "thumbnail": "https://wildcar.com",
+    "name": "Wild Cards",
+    "price": 979,
+    "image": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Fairy-512.png",
     "id": 4
   },
   {
-    "name": "Demian",
+    "name": "Centauro",
     "price": 600,
-    "thumbnail": "https://demian.com",
+    "image": "https://cdn3.iconfinder.com/data/icons/fantasy-and-role-play-game-adventure-quest/512/Centaur-512.png",
     "id": 5
   }
 ]
