@@ -204,7 +204,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"timestamp\": \"{{$$timestamp}}\",\r\n    \"products\": {}\r\n}",
+					"raw": "{\r\n    \"timestamp\": \"{{$$timestamp}}\",\r\n    \"products\": [{}]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -307,17 +307,8 @@
 			"request": {
 				"method": "POST",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://localhost:8080/api/carritos/3/productos/4",
+					"raw": "http://localhost:8080/api/carritos/1/productos/7",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -326,9 +317,9 @@
 					"path": [
 						"api",
 						"carritos",
-						"3",
+						"1",
 						"productos",
-						"4"
+						"7"
 					]
 				}
 			},
