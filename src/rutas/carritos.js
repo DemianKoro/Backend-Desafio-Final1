@@ -2,7 +2,7 @@ const { Router } = require ('express');
 const routerCarritos = Router();
 
 const Contenedor = require ('../contenedores/contenedor');
-const contenedorCarritos = new Contenedor('./public/carritos.txt');
+const contenedorCarritos = new Contenedor('./public/carritos.json');
 const contenedorProductos = new Contenedor('./public/productos.txt');
 
 //Lista de Carritos ↓
@@ -52,12 +52,13 @@ routerCarritos.delete('/:id', async (req, res) =>{
 routerCarritos.post('/:id/productos/:id_prod', async (req, res) =>{
     const {id} = req.params;
     const {id_prod} = req.params
-    const products = await contenedorProductos.getById(id_prod).catch()
-    console.log('producto:', products)
+    const producto = await contenedorProductos.getById(id_prod).catch()
+    // console.log('producto:', products)
     const carrito = await contenedorCarritos.getById(id).catch();
-    console.log("carrito", carrito)
-    const productoEnCarrito = await contenedorCarritos.saveInCarr(products, carrito).catch()
-    res.json(`Se guardó el producto ${products.name} con Id=${products.id} en el carrito id: ${carrito.id}`) 
+    // console.log("carrito", carrito)
+    await contenedorCarritos.saveInCarr(id, id_prod, producto).catch()
+    res.json(`Se guardó el producto ${producto.name} con Id=${producto.id} en el carrito id: ${carrito.id}`) 
+    // res.json("pruebando")
 }) 
 
 module.exports = routerCarritos;

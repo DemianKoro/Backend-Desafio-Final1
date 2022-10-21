@@ -6,7 +6,7 @@ const routerCarritos = require('./src/rutas/carritos');
 // const { Router } = require('express');
 // const routerProductos = Router()
 const productos = require('./public/productos.txt');
-const carritos = require('./public/carritos.txt')
+const carritos = require('./public/carritos.json')
 
 
 
