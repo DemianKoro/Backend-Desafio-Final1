@@ -47,18 +47,29 @@ routerCarritos.delete('/:id', async (req, res) =>{
     }
 })
 
-// Incorporar productos al carrito por su id de producto
+// Incorporar productos al carrito por su id de producto ↓
 
 routerCarritos.post('/:id/productos/:id_prod', async (req, res) =>{
     const {id} = req.params;
     const {id_prod} = req.params
-    const producto = await contenedorProductos.getById(id_prod).catch()
+    const producto = await contenedorProductos.getById(id_prod).catch();
     // console.log('producto:', products)
     const carrito = await contenedorCarritos.getById(id).catch();
     // console.log("carrito", carrito)
-    await contenedorCarritos.saveInCarr(id, id_prod, producto).catch()
+    await contenedorCarritos.saveInCarr(id, id_prod, producto).catch();
     res.json(`Se guardó el producto ${producto.name} con Id=${producto.id} en el carrito id: ${carrito.id}`) 
-    // res.json("pruebando")
 }) 
+
+// Incorporar productos al carrito por su id de producto ↓
+
+routerCarritos.delete('/:id/productos/:id_prod', async (req, res) =>{
+    const {id} = req.params;
+    const {id_prod} = req.params
+    const carrito = await contenedorCarritos.getById(id).catch();
+    const producto = await contenedorProductos.getById(id_prod).catch();
+    // console.log('producto:', producto)
+    await contenedorCarritos.deleteInCarr(id_prod, id, producto).catch();
+    res.json(`Se borró el producto ${producto.name} con Id=${producto.id} del carrito id: ${carrito.id}`)
+})
 
 module.exports = routerCarritos;

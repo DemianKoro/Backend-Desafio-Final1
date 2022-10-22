@@ -41,18 +41,15 @@ class Contenedor{
             carrito.products.push(producto);
             const content = await this.getAll();
             content.push(carrito);
-            console.log(content);
+            // console.log(content);
             await fs.promises.writeFile(this.archivo, JSON.stringify(content, null, 2));
         }
         return resultado;
     // }
     return null;
-        
-     
-       
-        
-        // await fs.promises.writeFile(this.archivo,JSON.stringify(carritos, null, 2))
+    
     }
+
 
     async getAll(){
         let productos = await fs.promises.readFile(this.archivo);
@@ -67,10 +64,29 @@ class Contenedor{
         return productoRetornado;
     }
 
+
     async deleteById(id){
         let productos = await this.getAll();
         let nuevaListaProductos = productos.filter((prod)=>prod.id!==parseInt(id));
         await fs.promises.writeFile(this.archivo,JSON.stringify(nuevaListaProductos, null, 2));
+    }
+
+
+    async deleteInCarr(id_prod, id) {
+        const carrito = await this.getById(id);
+        if (carrito) {
+            const producto = carrito.products.find(p => p.id == id_prod);
+            if (producto) {
+                let listaProductos = carrito.products.filter(p => p.id != id_prod);
+                await this.deleteById(id);
+                const content = await this.getAll();
+                const newCarrito = {...carrito, 'products': listaProductos}
+                content.push(newCarrito);
+                await fs.promises.writeFile(this.archivo, JSON.stringify(content, null, 2));
+                return producto;
+            }
+        }
+        return null;
     }
 
     async deleteAll(){
