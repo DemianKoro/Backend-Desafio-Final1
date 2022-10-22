@@ -308,7 +308,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/carritos/1/productos/7",
+					"raw": "http://localhost:8080/api/carritos/1/productos/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -319,7 +319,41 @@
 						"carritos",
 						"1",
 						"productos",
-						"7"
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Producto en Carrito",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/carritos/2/productos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"carritos",
+						"2",
+						"productos",
+						"2"
 					]
 				}
 			},
