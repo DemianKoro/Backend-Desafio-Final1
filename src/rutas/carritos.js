@@ -47,7 +47,7 @@ routerCarritos.delete('/:id', async (req, res) =>{
     }
 })
 
-// Incorporar productos al carrito por su id de producto ↓
+// Incorporar productos al carrito por su id de producto y de carrito ↓
 
 routerCarritos.post('/:id/productos/:id_prod', async (req, res) =>{
     const {id} = req.params;
@@ -56,20 +56,38 @@ routerCarritos.post('/:id/productos/:id_prod', async (req, res) =>{
     // console.log('producto:', products)
     const carrito = await contenedorCarritos.getById(id).catch();
     // console.log("carrito", carrito)
-    await contenedorCarritos.saveInCarr(id, id_prod, producto).catch();
-    res.json(`Se guardó el producto ${producto.name} con Id=${producto.id} en el carrito id: ${carrito.id}`) 
+    if(producto != null & carrito !=null){
+        await contenedorCarritos.saveInCarr(id, id_prod, producto).catch();
+        res.json(`Se guardó el producto ${producto.name} con Id=${producto.id} en el carrito id: ${carrito.id}`) 
+    } else {
+        if(producto == null){
+            res.send("Producto no encontrado");
+        } else {
+            res.send("Carrito no encontrado")
+        }
+    }
 }) 
 
-// Incorporar productos al carrito por su id de producto ↓
+// Borrar productos de carrito por su id de producto y de carrito↓
 
 routerCarritos.delete('/:id/productos/:id_prod', async (req, res) =>{
     const {id} = req.params;
     const {id_prod} = req.params
     const carrito = await contenedorCarritos.getById(id).catch();
     const producto = await contenedorProductos.getById(id_prod).catch();
-    // console.log('producto:', producto)
-    await contenedorCarritos.deleteInCarr(id_prod, id, producto).catch();
-    res.json(`Se borró el producto ${producto.name} con Id=${producto.id} del carrito id: ${carrito.id}`)
+    if (carrito == null ){
+        res.send("Carrito no encontrado")
+        
+    } else {
+        const productoInCarr = carrito.products.find(p => p.id == id_prod);
+        console.log(productoInCarr)
+        if( productoInCarr == null){
+            res.send("Producto no encontrado");
+        } if (productoInCarr != null) {
+            await contenedorCarritos.deleteInCarr(id_prod, id, producto).catch();
+            res.json(`Se borró el producto ${producto.name} con Id=${producto.id} del carrito id: ${carrito.id}`)
+        }
+    }
 })
 
 module.exports = routerCarritos;
